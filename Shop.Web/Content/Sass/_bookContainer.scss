@@ -1,0 +1,80 @@
+﻿.bookContainer {
+}
+
+.bookContainerTab {
+    
+}
+
+.bookContainerButton {
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-top: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 16.666%;
+    background-color: inherit;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    color: black;
+    text-decoration: none;
+
+    &:first-child {
+        border-left: 2px solid black;
+    }
+    &:last-child {
+        border-right: 2px solid black;
+    }
+    &:hover {
+        background-color: #dddddd;
+        text-decoration: none;
+        color: black;
+    }
+    &:focus {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.bookContainerShelf {
+}
+
+.bookContainerTable {
+    width: 100%;
+
+    tr {
+        &:nth-child(2n) {
+            background-color: #f8f8f8;
+        }
+    }
+
+    th {
+        padding: 4px 8px;
+        vertical-align: top;
+        border: 2px solid black;
+        background-color: #eeeeee;
+    }
+
+    td {
+        padding: 8px;
+        line-height: 1.428571429;
+        vertical-align: top;
+        border: 2px solid black;
+
+        &:last-child {
+            min-width: 95px;
+
+            a {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.buttonActive {
+    background-color: #ededed;
+}

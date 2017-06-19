@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Recruitment App</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")   
+    <script src="https://use.fontawesome.com/030c47545b.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    @* Modules *@
+    <script src="~/Scripts/app/app.js"></script>
+    @* Controllers *@
+    <script src="~/Scripts/app/controllers/booksControllers.js"></script>
+    @* Serivces *@
+    <script src="~/Scripts/app/services/bookService.js"></script>
+    @* Directives *@
+    <script src="~/Scripts/app/directives/tabButton.js"></script>
+    <script src="~/Scripts/app/directives/searchButton.js"></script>
+    <script src="~/Scripts/app/directives/addToCartButton.js"></script>
+</head>
+<body>
+    <div class="container body-content" ng-app="mainApp">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Recruitment App</p>
+        </footer>
+    </div>   
+    @Scripts.Render("~/bundles/bootstrap")   
+    @RenderSection("scripts", required: false)
+    <div id="loadingElement" class="loadingModal">
+        <img class="loadingModalElement" src="~/Content/Images/ajax-loader.gif" />
+    </div>   
+</body>
+</html>

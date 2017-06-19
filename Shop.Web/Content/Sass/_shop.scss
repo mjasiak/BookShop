@@ -1,0 +1,68 @@
+﻿@mixin inlinemiddle() {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.shopHeader{
+    position: relative;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+}
+
+.shopHeaderText {
+    @include inlinemiddle();
+    width: 35%;
+}
+
+.shoppingCart {
+    @include inlinemiddle();
+    text-align: right;
+    width: 25%;
+}
+
+.shopContentText  {
+    @include inlinemiddle();
+    margin: 0;
+    padding: 20px 0;
+}
+.productCounter {
+    @include inlinemiddle();
+    padding: 10px;
+    border: 1px solid #222;
+    margin: 0 15px;
+}
+
+.shopContent {
+    padding: 20px 0;
+
+    h3 {
+        padding-bottom: 20px;
+    }
+}
+
+.searchBar {
+    @include inlinemiddle();
+    width: 37.5%;
+    h4 {
+        @include inlinemiddle();
+        padding-right: 10px;
+    }
+
+    button {
+        @include inlinemiddle();
+        border: 2px solid black;
+        background-color:inherit;
+        padding: 5px 20px;
+    }
+}
+
+.searchInput {
+    @include inlinemiddle();
+    input {
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    i {
+    }
+}

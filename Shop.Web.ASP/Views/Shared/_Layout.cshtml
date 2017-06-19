@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://use.fontawesome.com/030c47545b.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/App/tabButtonsController.js"></script>
+    <script src="~/Scripts/App/addToCartController.js"></script>
+    <script src="~/Scripts/App/searchController.js"></script>
+</head>
+<body>    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <div id="loadingElement" class="loadingModal">
+        <img class="loadingModalElement" src="~/Content/Images/ajax-loader.gif" />
+    </div>    
+    <div class="addToCartModal">
+        <div class="aTCModal">
+            <div class="aTCModalHeader">
+                <p>Dodaj do koszyka</p>
+                <i id="atcExit" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="aTCModalContent">
+                <form id="aTCForm">
+                    <div class="form-grp">
+                        <p>Okładka</p>
+                        <select id="atcSelectCover" name="cover">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <p>Wydawnictwo</p>
+                        <select id="atcSelectPublisher" name="publisher">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <p>Wydanie</p>
+                        <select id="atcSelectYear" name="year">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                        <p> rok</p>
+                    </div>
+                    <div class="form-grp">
+                        <p>Nośnik</p>
+                        <select id="atcSelectCarrier" name="carrier">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <p>Ilość</p>
+                        <input id="atcInputQuantity" type="number" max="999" min="1" maxlength="3" name="quantity" value="1"/>
+                    </div>
+                </form>
+            </div>
+            <div class="aTCModalFooter">
+                <button id="atcCancel">Anuluj</button>
+                <button id="atcAdd">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

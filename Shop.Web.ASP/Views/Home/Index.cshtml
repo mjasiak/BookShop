@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Shop.Data.Models.Book>
+
+@{
+    ViewBag.Title = "Books Shop";
+}
+<div class="shopWrapper">
+    <div class="shopHeader">
+        <div class="shopHeaderText">
+            <h1>Księgarnia internetowa</h1>
+            <p>Nasze sklepy prowadzimy z pasją!</p>
+        </div>
+        <div class="searchBar">
+            <h4>Wyszukiwarka</h4>
+            <div class="searchInput">
+                <input type="text" maxlength="10"/>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <button id="searchButton" search-button>Szukaj</button>
+        </div>
+        <div class="shoppingCart">
+            <h4 class="shopContentText">Twój koszyk</h4>
+            <div class="productCounter">Liczba produktów: <b id="productCounter">0</b></div>
+        </div>
+    </div>
+    <div class="shopContent">
+        <h3>Katalog książek</h3>
+
+        <div class="bookContainer">
+            <div class="bookContainerTab">            
+                <a href="/Books/GetAll" class="bookContainerButton buttonActive">Wszystkie</a>
+                <a href="/Books/GetAudiobooks" class="bookContainerButton">Audiobooki</a>
+                <a href="/Books/GetEbooks" class="bookContainerButton">Ebooki</a>
+                <a href="/Books/GetNews" class="bookContainerButton">Nowości</a>
+                <a href="/Books/GetPreviews" class="bookContainerButton">Zapowiedzi</a>
+                <a href="/Books/GetSuperBargains" class="bookContainerButton">Super okazje</a>                
+            </div>
+            <div id="bookContainer">                
+                    @Html.Partial("Partials/BooksList");               
+            </div>                         
+        </div>
+    </div>
+</div>

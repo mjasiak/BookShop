@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Books Shop";
+}
+<div class="shopWrapper" ng-controller="booksController">
+    <div class="shopHeader">
+        <div class="shopHeaderText">
+            <h1>Księgarnia internetowa</h1>
+            <p>Nasze sklepy prowadzimy z pasją!</p>
+        </div>
+        <div class="searchBar">
+            <h4>Wyszukiwarka</h4>
+            <div class="searchInput">
+                <input type="text" ng-model="searchValue" maxlength="10"/>
+                <i></i>
+            </div>
+            <button search-button id="searchButton">Szukaj</button>
+        </div>
+        <div class="shoppingCart">
+            <h4 class="shopContentText">Twój koszyk</h4>
+            <div class="productCounter">Liczba produktów: <b>{{counter}}</b></div>
+        </div>
+    </div>
+    <div class="shopContent">
+        <h3>Katalog książek</h3>
+        <div class="bookContainer">
+            <div class="bookContainerTab">
+                <a tab-button class="bookContainerButton buttonActive" href="/Books/GetAll">Wszystkie</a>
+                <a tab-button class="bookContainerButton" href="/Books/GetOnlyAudiobooks">Audiobooki</a>
+                <a tab-button class="bookContainerButton" href="/Books/GetOnlyEbooks">E-booki</a>
+                <a tab-button class="bookContainerButton" href="/Books/GetNews">Nowości</a>
+                <a tab-button class="bookContainerButton" href="/Books/GetPreviews">Zapowiedzi</a>
+                <a tab-button class="bookContainerButton" href="/Books/GetSuperBargains">Super okazje</a>
+            </div>
+            <div class="bookContainerShelf">
+                <table class="bookContainerTable">
+                    <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Data Wydania</th>
+                            <th>Cena</th>
+                            <th>Autor</th>
+                            <th>Wydawnictwo</th>
+                            <th>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="book in books" id="{{book.BookId}}">
+                            <td>{{book.Name}}</td>
+                            <td>{{book.ReleaseDate | date : 'dd.MM.yyyy'}}</td>
+                            <td>{{book.Price}}</td>
+                            <td>{{book.Author}}</td>
+                            <td>{{book.Publisher}}</td>
+                            <td><a add-to-cart>do koszyka</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="addToCartModal">
+        <div class="aTCModal">
+            <div class="aTCModalHeader">
+                <p>Dodaj do koszyka</p>
+                <i id="atcExit" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="aTCModalContent">
+                <form id="aTCForm">
+                    <div class="form-grp">
+                        <p>Okładka</p>
+                        <select id="atcSelectCover" name="cover">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <p>Wydawnictwo</p>
+                        <select id="atcSelectPublisher" name="publisher">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <p>Wydanie</p>
+                        <select id="atcSelectYear" name="year">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                        <p> rok</p>
+                    </div>
+                    <div class="form-grp">
+                        <p>Nośnik</p>
+                        <select id="atcSelectCarrier" name="carrier">
+                            <option selected value="null">- wybierz --</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <p>Ilość</p>
+                        <input id="atcInputQuantity" type="number" max="999" min="1" maxlength="3" name="quantity" value="1" ng-model="quantity"/>
+                    </div>
+                </form>
+            </div>
+            <div class="aTCModalFooter">
+                <button id="atcCancel">Anuluj</button>
+                <button id="atcAdd" ng-click="addToCart(quantity)">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Shop.Data.Models.Book>
+
+    <div class="bookContainerShelf">
+        <div class="scrollbar-outer">
+            <table class="bookContainerTable">
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Data Wydania</th>
+                        <th>Cena</th>
+                        <th>Autor</th>
+                        <th>Wydawnictwo</th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in Model)
+            {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => book.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => book.ReleaseDate)</td>
+                            <td>@Html.DisplayFor(modelItem => book.Price)</td>
+                            <td>@Html.DisplayFor(modelItem => book.Author)</td>
+                            <td>@Html.DisplayFor(modelItem => book.Publisher)</td>
+                            <td><a id="@book.BookId" class="addToCartButton">Do koszyka</a></td>
+                            @* <td>@Ajax.ActionLink("Do koszyka", "", "", null, new AjaxOptions(), new {@class="addToCartButton" })</td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>    
+        </div>            
+    </div>
+
