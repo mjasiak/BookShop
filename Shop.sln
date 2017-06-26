@@ -7,13 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Data", "Shop.Data\Shop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebAPI", "Shop.WebAPI\Shop.WebAPI.csproj", "{151BBC48-0FB1-41D5-903B-0058C8CC1583}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web", "Shop.Web.ASP\Shop.Web.csproj", "{C94CE112-C387-452B-9C85-BA6ABDFE90BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web.ASP", "Shop.Web.ASP\Shop.Web.ASP.csproj", "{C94CE112-C387-452B-9C85-BA6ABDFE90BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Common", "Shop.Core\Shop.Common.csproj", "{18884BF4-97A8-4524-844E-6E52364457DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{487BEA1A-F7E7-45CF-A53A-B77A0909067D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Test", "Shop.Test\Shop.Test.csproj", "{6D65D645-72E8-423D-AAFF-DF8C3E8379EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web.AngularJS", "..\..\Users\mjasiak\Documents\Visual Studio 2015\Projects\BookShop\BookShop\Shop.Web\Shop.Web.AngularJS.csproj", "{F8C77B57-73C3-45ED-9C61-728FFFD99FB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{6D65D645-72E8-423D-AAFF-DF8C3E8379EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D65D645-72E8-423D-AAFF-DF8C3E8379EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D65D645-72E8-423D-AAFF-DF8C3E8379EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C77B57-73C3-45ED-9C61-728FFFD99FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C77B57-73C3-45ED-9C61-728FFFD99FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C77B57-73C3-45ED-9C61-728FFFD99FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C77B57-73C3-45ED-9C61-728FFFD99FB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
